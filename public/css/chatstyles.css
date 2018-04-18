@@ -1,0 +1,140 @@
+.chat-container{
+	width: 90%;
+	margin: auto;
+	background-image: url(bg.jpg);
+	box-shadow:         3px 3px 5px 6px #ccc;;
+}
+.header{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: rgb(123,234,456);
+}
+.title{
+	padding: 15px;
+	width: 45%;
+	float: left;
+}
+.profile{
+	margin-left: 20px;
+	padding: 15px;
+	width: 48%;
+	text-align: right;
+	float: right;
+}
+.profile-image{
+	border-radius: 50%;
+	height: 30px; 
+	width: 30px;
+}
+.userlist{
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	background-color: rgb(200, 247, 208);
+	float: left;
+	width: 20%;
+	overflow-y: scroll;
+	max-height: 500px;
+	height: 500px;
+}
+.userlist p{
+	margin: 0;
+	padding-left: 20px;
+	padding-right: 10px;
+	padding-bottom:10px;
+	padding-top:10px;
+	overflow: hidden;
+}
+.userlist p:nth-child(even) {
+    background: rgb(180, 216, 177);
+}
+.userlist p:nth-child(odd) {
+    background: rgb(136, 198, 131);
+}
+.chatlog{
+	padding: 10px;
+	float: right;
+	width: 76%;
+	overflow-y: scroll;
+	max-height: 454px;
+	height: 454px;
+}
+.chatlog p{
+	padding: 10px;
+	border-radius: 4px;
+	margin: 2px;
+	width: 80%;
+}
+.chatlog p:nth-child(even) {
+    background: rgba(232, 252, 189,0.4);
+    float: right;
+}
+.chatlog p:nth-child(odd) {
+    background: rgba(77, 79, 74,0.4);
+    float: left;
+}
+.chatlog p small{
+	float: right;
+}
+.chat-composer{
+	margin: 0;
+}
+
+/*testing*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: rgb(249, 173, 97);
+}
+
+li {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    /*padding: 14px 16px;*/
+    text-decoration: none;
+}
+
+.dropdown {
+    background-color: rgba(0,0,0,0.2);
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown a:hover{
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
