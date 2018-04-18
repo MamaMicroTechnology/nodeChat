@@ -1,13 +1,13 @@
 var socket = io.connect('http://localhost:3000');
 $(document).ready(function () {
     $.ajax({
-        url: 'http://localhost:8000/token',
+        url: 'https://mamahome360.com/webapp/token',
         xhrFields: {
             withCredentials: true
         }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-        window.location.href = "http://localhost:8000/login";
+        window.location.href = "https://mamahome360.com/webapp/login";
         $('#holder').html("Not Logged In");
     })
     .done(function (result, textStatus, jqXHR) {
@@ -16,7 +16,7 @@ $(document).ready(function () {
         $('#userlist').html(result.userlist);
         $('#userid').val(result.user.id);
         console.log(result.user.profilepic);
-        $('#pp').attr('src','http://localhost:8000/profilePic/'+result.user.profilepic);
+        $('#pp').attr('src','https://mamahome360.com/webapp/public/profilePic/'+result.user.profilepic);
     });
 });
 $(function () {

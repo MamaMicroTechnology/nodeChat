@@ -6,13 +6,14 @@ var io = require('socket.io')(server);
 var socketioJwt = require('socketio-jwt');
 require('dotenv').config({path: '../laravel/.env'});
 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 var request = require('request');
 var headers = {
     'User-Agent':       'Super Agent/0.0.1',
     'Content-Type':     'application/x-www-form-urlencoded'
 }
 
-const url = "http://localhost:8000/api/messages";
+const url = "https://mamahome360.com/webapp/api/messages";
 
 // Let express show auth.html to client
 app.use(express.static(__dirname + '/public'));
@@ -41,12 +42,12 @@ io.on('connection', function(socket){
             }
             socket.emit('old chat message', title);
         }else{
-            console.log(body)
+            console.log(error)
         }
     });
     socket.on('chat message', function(msg){
         var options = {
-            url: 'http://localhost:8000/api/message',
+            url: 'https://mamahome360.com/webapp/api/message',
             method: 'POST',
             headers: headers,
             form: {'body': msg.msg,'id': msg.id}
@@ -64,8 +65,8 @@ io.on('connection', function(socket){
     });
 });
 
-server.listen(8080, function(){
-    console.log('listening on *:8080');
+server.listen(3000, function(){
+    console.log('listening on *:3000');
 });
 
 // When authenticated, send back name + email over socket
