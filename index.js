@@ -65,8 +65,8 @@ io.on('connection', function(socket){
     });
 });
 
-server.listen(3000, function(){
-    console.log('listening on *:3000');
+server.listen(5000, function(){
+    console.log('listening on *:5000');
 });
 
 // When authenticated, send back name + email over socket
