@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
+var port = process.env.PORT|| 3000;
 var socketioJwt = require('socketio-jwt');
 require('dotenv').config({path: '../laravel/.env'});
 
@@ -65,9 +66,7 @@ io.on('connection', function(socket){
     });
 });
 
-server.listen(5000, function(){
-    console.log('listening on *:5000');
-});
+server.listen(port);
 
 // When authenticated, send back name + email over socket
 io.on('authenticated', function (socket) {

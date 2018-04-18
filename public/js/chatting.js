@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect();
 $(document).ready(function () {
     $.ajax({
         url: 'https://mamahome360.com/webapp/token',
