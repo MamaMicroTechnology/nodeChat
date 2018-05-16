@@ -16,7 +16,7 @@ $(document).ready(function () {
         $('#userid').val(result.user.id);
         // $('#userlist').html(result.userlist);
         console.log(result.user.profilepic);
-        $('#pp').attr('src','mamahome360.com/webapp/public/profilePic/'+result.user.profilepic);
+        $('#pp').attr('src','https://mamahome360.com/webapp/public/profilePic/'+result.user.profilepic);
     });
 });
 $(function () {
