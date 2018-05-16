@@ -22,7 +22,7 @@ const url2 = "https://mamahome360.com/webapp/api/ManagementMessages";
 const iturl = "https://mamahome360.com/webapp/api/itMessages";
 const tlurl = "https://mamahome360.com/webapp/api/tlMessages";
 
-// Let express show auth.html to client
+// Let This is correct express show auth.html to client
 app.use(express.static(__dirname + '/public'));
 // app.get('/', function (req, res, next) {
 //     res.sendFile(__dirname + '/sorry.html');
