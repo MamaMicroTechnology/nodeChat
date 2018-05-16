@@ -12,7 +12,7 @@
 <br>
     <div class="chat-container" id="holder">
         <ul>
-          <li><br>MMT Employee Chat (All)</li>
+          <li><br>MMT Employee Chat (IT)</li>
           <li class="dropdown" style="float:right">
             <!-- <a href=""> -->
                 <img id="pp" class="profile-image"><br>
@@ -25,7 +25,7 @@
           </li>
         </ul>
         <div class="userlist" id="userlist">
-            <a href="/">All <span id="count" class="pull-right"></span></a>
+            <a href="/">All</a>
             <a href="/invoices">Invoices</a>
             <a href="/it">I.T.</a>
             <a href="/mhtl">Team Leaders</a>
@@ -51,6 +51,54 @@
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="/js/chatting.js"></script>
+    <!-- <script src="/js/chatting.js"></script> -->
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'https://mamahome360.com/webapp/webapp/token',
+                xhrFields: {
+                    withCredentials: true
+                }
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                window.location.href = "https://mamahome360.com/webapp/webapp/login";
+                $('#holder').html("Not Logged In");
+            })
+            .done(function (result, textStatus, jqXHR) {
+                $('#name').html(result.user.name);
+                $('#email').html(result.user.email);
+                // $('#userlist').html(result.userlist);
+                $('#userid').val(result.user.id);
+                console.log(result.user.profilepic);
+                $('#pp').attr('src','mamahome360.com/webapp/public/profilePic/'+result.user.profilepic);
+            });
+        });
+        var socket = io('/it');
+        socket.on('old chat message', function(msg){
+            $('#messages').html(msg);
+            $(document).ready(function(){
+                    $('#log').animate({
+                    scrollTop: $('#log').get(0).scrollHeight
+                });
+            });
+        });
+        $(function () {
+            $('form').submit(function(){
+                var msg = $('#m').val(); 
+                var id = $('#userid').val();
+                socket.emit('chat message', {msg: msg, id: id});
+            $('#m').val('');
+            return false;
+            });
+        });
+        socket.on('chat message', function(msg){
+            $('#messages').append($('<p>').html(msg));
+                $(document).ready(function(){
+                    $('#log').animate({
+                    scrollTop: $('#log').get(0).scrollHeight
+                });
+            });
+        });
+    </script>
 </body>
 </html>

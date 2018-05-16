@@ -1,7 +1,7 @@
 .chat-container{
 	width: 90%;
 	margin: auto;
-	background-image: url(bg.jpg);
+	background-color: rgb(200, 187, 115);
 	box-shadow:         3px 3px 5px 6px #ccc;;
 }
 .header{
@@ -38,19 +38,27 @@
 	max-height: 500px;
 	height: 500px;
 }
-.userlist p{
+.userlist a{
 	margin: 0;
+	display: block;
 	padding-left: 20px;
 	padding-right: 10px;
 	padding-bottom:10px;
 	padding-top:10px;
 	overflow: hidden;
+	text-decoration: none;
 }
-.userlist p:nth-child(even) {
+.userlist a:nth-child(even) {
     background: rgb(180, 216, 177);
 }
-.userlist p:nth-child(odd) {
+.userlist a:nth-child(even):hover {
+    background: rgb(211, 238, 208);
+}
+.userlist a:nth-child(odd) {
     background: rgb(136, 198, 131);
+}
+.userlist a:nth-child(odd):hover {
+    background: rgb(163, 212, 159);
 }
 .chatlog{
 	padding: 10px;

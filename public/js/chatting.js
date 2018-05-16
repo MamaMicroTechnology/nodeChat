@@ -13,10 +13,10 @@ $(document).ready(function () {
     .done(function (result, textStatus, jqXHR) {
         $('#name').html(result.user.name);
         $('#email').html(result.user.email);
-        $('#userlist').html(result.userlist);
         $('#userid').val(result.user.id);
+        // $('#userlist').html(result.userlist);
         console.log(result.user.profilepic);
-        $('#pp').attr('src','https://mamahome360.com/webapp/public/profilePic/'+result.user.profilepic);
+        $('#pp').attr('src','mamahome360.com/webapp/public/profilePic/'+result.user.profilepic);
     });
 });
 $(function () {
