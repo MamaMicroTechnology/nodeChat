@@ -25,8 +25,11 @@ const tlurl = "https://mamahome360.com/webapp/api/tlMessages";
 // Let express show auth.html to client
 app.use(express.static(__dirname + '/public'));
 app.get('/', function (req, res, next) {
-    res.sendFile(__dirname + '/auth.html');
+    res.sendFile(__dirname + '/sorry.html');
 });
+// app.get('/', function (req, res, next) {
+//     res.sendFile(__dirname + '/auth.html');
+// });
 app.get('/invoices', function (req, res, next) {
     res.sendFile(__dirname + '/department.html');
 });
