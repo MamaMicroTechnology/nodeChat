@@ -55,13 +55,13 @@
     <script>
         $(document).ready(function () {
             $.ajax({
-                url: 'https://mamahome360.com/webapp/webapp/token',
+                url: 'https://mamahome360.com/webapp/token',
                 xhrFields: {
                     withCredentials: true
                 }
             })
             .fail(function (jqXHR, textStatus, errorThrown) {
-                window.location.href = "https://mamahome360.com/webapp/webapp/login";
+                window.location.href = "https://mamahome360.com/webapp/login";
                 $('#holder').html("Not Logged In");
             })
             .done(function (result, textStatus, jqXHR) {
